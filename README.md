@@ -1,0 +1,2 @@
+# SwitchMediaTechAssignement
+Technical Test Assignement
