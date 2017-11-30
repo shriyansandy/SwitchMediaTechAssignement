@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import org.openqa.selenium.By;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class GmailSigninPage {
+	
+	public static By hiText = By.xpath(".//*[@id='headingText']");
+	public static By emailInputField = By.xpath(".//*[@id='identifierId']");
+	public static By passwordField = By.xpath(".//*[@id='password']/div[1]/div/div[1]/input");
+	public static By emailInputNextButton = By.xpath(".//*[@id='identifierNext']/content/span");
+	public static By passwordInputNextButton = By.xpath(".//*[@id='passwordNext']/content/span");
+	public static By composeButton = By.cssSelector(".T-I.J-J5-Ji.T-I-KE.L3");
+	public static By maximizeButton = By.xpath("//td//img[2]");
+	public static By toField = By.xpath(".//textarea[contains(@aria-label, 'To')]");
+	public static By subjectField = By.name("subjectbox");
+	public static By emailBody = By.xpath(".//*[@id=':ok']");
+	public static By attachButton = By.xpath(".//*[@id=':ov']");
+	public static By sendButton = By.xpath(".//*[@id=':lz']");
+	public static By profilePic = By.xpath(".//*[@id='gb']/div[1]/div[1]/div[2]/div[5]/div[1]/a/span");
+	public static By signOut = By.xpath(".//*[@id='gb_71']");
+	public static By wrongPasswordText = By.xpath(".//*[@id='password']/div[2]/div[2]");
+	public static By wrongUserName = By.xpath(".//*[@id='view_container']/form/div[2]/div/div[1]/div[1]/div/div[2]/div[2]");
+	public GmailSigninPage() {
+		
+	}	
+
+}

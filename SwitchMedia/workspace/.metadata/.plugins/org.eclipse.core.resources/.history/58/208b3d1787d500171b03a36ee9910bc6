@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class TestSendEmail extends BaseClass{
+	
+	@Test()
+	public void invalidLogin(){
+		
+	}
+	
+	@Test()
+	public void validLogin(){
+		
+	}
+	
+
+
+}

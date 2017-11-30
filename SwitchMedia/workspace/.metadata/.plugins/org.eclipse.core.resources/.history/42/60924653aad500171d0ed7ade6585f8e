@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class Utilities extends BaseClass{
+
+	/**
+	 * 
+	 */
+	public Utilities() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static boolean isElementPresent(By by) {
+	    boolean isPresent = true;
+	    if (driver.findElements(by).isEmpty()) {
+	       isPresent = false;
+	    }
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    return isPresent;
+	 }
+
+}

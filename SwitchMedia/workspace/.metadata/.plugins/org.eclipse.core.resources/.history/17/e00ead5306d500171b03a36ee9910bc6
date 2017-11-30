@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package com.codebind;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class GmailSigninPage {
+
+	/**
+	 * 
+	 */
+	public GmailSigninPage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

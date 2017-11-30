@@ -1,0 +1,135 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class BaseClass {
+	
+	public static String emailsubject = "Test Email";
+	public static String tomailid = "shriyansandy@gmail.com";
+	public static String mailbody ="Hi Sandeep,"+"\n\n"+"Hope you are doing good. This is a Test EMAIL."+"\n\n" + "Thanks,"+"\n"+"Tester";
+	public static String chromeDriver = "C:\\workspace\\tea\\drivers\\chrome\\chromedriver.exe";
+	public static String url = "http://www.gmail.com";
+	public static String username = "testswitchmed123";
+	public static String password = "Admin@123test";
+	public static String wrongPassword = "Xdmin@123test";
+	public static String imageFile = "C:\\Users\\sshriyan\\Desktop\\AutoIT\\ImageUpload.exe";
+	public static String expectedString = "#inbox";
+	
+	public BaseClass() {
+		System.out.println("Default COnstructor");
+	}
+
+	
+	static WebDriver driver;
+		
+	@BeforeMethod
+	public void launchApp(){
+		
+	}
+		
+	@AfterMethod
+	public void closeApp(){
+
+	}
+		
+	public static void main(String[] args) throws InterruptedException{
+		//launch Chrome
+		System.setProperty("webdriver.chrome.driver", chromeDriver);
+		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.get(url);
+		Thread.sleep(2000);
+		
+		//log into gmail
+		Assert.assertEquals(isElementPresent(GmailSigninPage.emailInputField),true,"Email Input Field exists");
+		driver.findElement(GmailSigninPage.emailInputField).sendKeys(username);
+		Thread.sleep(200);
+		driver.findElement(GmailSigninPage.emailInputNextButton).click();
+		Thread.sleep(500);
+		Assert.assertEquals(isElementPresent(GmailSigninPage.passwordField),true,"Password Field exists");
+		driver.findElement(GmailSigninPage.passwordField).sendKeys(password);
+		Thread.sleep(200);
+		Assert.assertEquals(isElementPresent(GmailSigninPage.submitButtton),true,"Submit Button exists");
+		driver.findElement(GmailSigninPage.submitButtton).click();
+		Thread.sleep(5000);
+		
+		//Verify login
+		if (driver.getCurrentUrl().contains(expectedString)){
+			System.out.println("Log in is Sucessfull");
+			
+			//Compose Mail
+			driver.findElement(GmailSigninPage.composeButton).click();
+			Thread.sleep(500);
+			driver.findElement(GmailSigninPage.maximizeButton).click();
+			driver.findElement(GmailSigninPage.toField).click();
+			driver.findElement(GmailSigninPage.toField).sendKeys(tomailid);
+			driver.findElement(GmailSigninPage.subjectField).click();
+			driver.findElement(GmailSigninPage.subjectField).sendKeys(emailsubject);
+			driver.findElement(GmailSigninPage.emailBody).click();
+			driver.findElement(GmailSigninPage.emailBody).sendKeys(mailbody);
+			Thread.sleep(50);
+			driver.findElement(GmailSigninPage.attachButton).click();
+			Thread.sleep(1000);
+			
+			//Attaching an image - Used AUTO IT tool to achieve this
+			try {
+				Runtime.getRuntime().exec(imageFile);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			Thread.sleep(10000);
+			driver.findElement(GmailSigninPage.sendButton).click();
+			Thread.sleep(300);
+			driver.findElement(GmailSigninPage.profilePic).click();
+			Thread.sleep(200);
+			driver.findElement(GmailSigninPage.signOut).click();
+			Thread.sleep(2000);
+		}
+		else {
+			String errorMessage = driver.findElement(GmailSigninPage.wrongCredentialText).getText();
+			System.out.println("Log in failed with the error message : "+errorMessage);
+		}
+		driver.close();
+		
+	}
+	
+	 public static boolean isElementPresent(By by) {
+	        boolean isPresent = true;
+	        if (driver.findElements(by).isEmpty()) {
+	            isPresent = false;
+	        }
+	        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	        return isPresent;
+	 }
+ 
+	
+
+		
+		
+		
+		
+		
+
+	
+
+}

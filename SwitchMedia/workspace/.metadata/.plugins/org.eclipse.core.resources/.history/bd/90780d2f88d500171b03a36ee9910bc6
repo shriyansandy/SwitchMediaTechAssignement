@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import org.testng.annotations.Test;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class Assignment {
+
+	public Assignment() {
+		System.out.println("Default Constructor");
+	}
+
+	@Test
+	public void validLoginTest(){
+		
+	}
+	
+	@Test
+	public void invalidLoginTest(){
+		
+	}
+
+}

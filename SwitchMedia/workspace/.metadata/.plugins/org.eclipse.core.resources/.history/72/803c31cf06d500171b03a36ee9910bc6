@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import org.openqa.selenium.By;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class GmailSigninPage {
+
+	/**
+	 * 
+	 */
+	public GmailSigninPage() {
+		
+	}
+	
+	public By SignInText = By.xpath("");
+
+}

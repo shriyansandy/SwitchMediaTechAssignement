@@ -1,0 +1,18 @@
+2017-11-30 22:22:12 INFO  BaseClass:49 - Launching Chrome Browser
+2017-11-30 22:22:16 INFO  BaseClass:56 - Open Gmail login page
+2017-11-30 22:22:21 INFO  Assignment:27 - Logging into Gmail account
+2017-11-30 22:22:29 INFO  Assignment:40 - Verifying whether login is successful
+2017-11-30 22:22:29 INFO  Assignment:44 - Composing an email
+2017-11-30 22:22:34 INFO  Assignment:62 - Adding an attachment
+2017-11-30 22:22:39 INFO  Assignment:70 - Sending an email
+2017-11-30 22:22:40 INFO  Assignment:74 - Logging out of Gmail account
+2017-11-30 22:22:44 INFO  BaseClass:63 - Closing Chrome Browser
+2017-11-30 23:20:56 INFO  BaseClass:43 - Launching Chrome Browser
+2017-11-30 23:21:00 INFO  BaseClass:50 - Open Gmail login page
+2017-11-30 23:21:06 INFO  Assignment:22 - Logging into Gmail account
+2017-11-30 23:21:15 INFO  Assignment:34 - Verifying whether login is successful
+2017-11-30 23:21:15 INFO  Assignment:37 - Composing an email
+2017-11-30 23:21:20 INFO  Assignment:55 - Adding an attachment
+2017-11-30 23:21:25 INFO  Assignment:63 - Sending an email
+2017-11-30 23:21:25 INFO  Assignment:67 - Logging out of Gmail account
+2017-11-30 23:21:30 INFO  BaseClass:56 - Closing Chrome Browser

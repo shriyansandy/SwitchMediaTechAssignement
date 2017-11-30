@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package com.codebind;
+
+import org.openqa.selenium.By;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class GmailSigninPage {
+
+	public By emailInputField = By.xpath(".//*[@id='identifierId']");
+	public By passwordField = By.xpath(".//*[@id='password']/div[1]/div/div[1]/input");
+	public By emailInputNextButton = By.xpath(".//*[@id='identifierNext']/content/span");
+	public By passwordInputNextButton = By.xpath(".//*[@id='passwordNext']/content/span");
+	public By composeButton = By.xpath(".//*[@id=':hl']/div/div");
+	public By toField = By.xpath(".//*[@id=':ko']");
+	public By subjectField = By.xpath(".//*[@id=':l5']");
+	public By attachButton = By.xpath(".//*[@id=':ob']");
+	public By sendButton = By.xpath(".//*[@id=':me']");
+	public GmailSigninPage() {
+		
+	}
+	
+	
+	
+
+}

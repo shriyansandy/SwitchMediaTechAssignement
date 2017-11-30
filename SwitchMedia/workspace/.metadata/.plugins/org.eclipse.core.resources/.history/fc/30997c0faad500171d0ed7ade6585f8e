@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package com.codebind;
+
+/**
+ * @author sshriyan
+ *
+ */
+public class Utilities {
+
+	public Utilities() {
+	}
+	
+	
+
+}
