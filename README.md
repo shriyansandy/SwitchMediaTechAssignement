@@ -1,7 +1,7 @@
 # SwitchMediaTechAssignement
 Technical Test Assignement
 
-This project performs followinfg task
+This project performs following task
 ==========================================
 1. Open the Gmail login page (http://www.gmail.com/) using Selenium Web driver 3.7.1.
 2. Validate the existence of Gmail login page UI elements (3 elements - Email input field, Password field, Sign in button)
